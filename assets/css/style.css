@@ -22,6 +22,29 @@ h1 {
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(21,25,46,0.8729866946778712) 100%);
 }
 
+#look-up {
+    margin-right: 20px;
+    padding: 20px;
+    clear: both;
+    float: left;
+    width: 20%;
+    height: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #2589bd;
+}
+
+/* #five-day-forcast {
+    background: white;
+} */
+
+
+
+/* .float-right {
+    float: right;
+    margin-left: 25px;
+} */
+
+
 #search {
     float: left;
    
@@ -39,5 +62,28 @@ h1 {
 #search-heading {
     font-weight: 900;
     font-size: 23px;
+    
+}
+
+main {
+    width: 75%;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#main-dash {
+    background: white;
+    color: black;
+    border: thin solid black
+}
+
+.weather-dash {
+    margin-bottom: 20px;
+    padding: 50px;
+    height: 300px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #0072bb;
+    color: #ffffff;
+    width: 100%;
     
 }
