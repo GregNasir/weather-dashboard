@@ -12,6 +12,18 @@ h1 {
     color: white;
 }
 
+h3 {
+    font-size: 40px;
+}
+
+/* #fiveday-header {
+    font-size: 20px;
+    font-weight: bold;
+} */
+
+#city-heading {
+    font-size: 30px;
+}
 
 #header {
     
@@ -59,31 +71,56 @@ h1 {
 
 }
 
+#enter-city {
+    width: 185px;
+}
+
+#clear-history {
+    color: white;
+    margin-top: 10px;
+    width: 190px;
+}
+
 #search-heading {
     font-weight: 900;
     font-size: 23px;
     
 }
 
-main {
+#w
+
+/* main {
     width: 75%;
     display: inline-block;
     margin-left: 20px;
-}
+} */
 
-#main-dash {
+/* #main-dash {
     background: white;
     color: black;
     border: thin solid black
-}
+} */
 
-.weather-dash {
+/* #col-1 {
     margin-bottom: 20px;
-    padding: 50px;
+    
+    height: 200px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(14, 14, 96);
+    color: #ffffff;
+    
+    
+    
+   
+} */
+
+/* .weather-dash {
+    margin-bottom: 20px;
+   
     height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #0072bb;
-    color: #ffffff;
-    width: 100%;
+    /* background-color: #0072bb; */
+    /* color: black; */
+    /* width: 100%; */
     
-}
+/* } */ 
