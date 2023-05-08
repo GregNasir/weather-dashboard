@@ -90,6 +90,9 @@ function initPage() {
                             const forecastTempEl = document.createElement("p");
                             forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
                             forecastEls[i].append(forecastTempEl);
+                            const forecastWindEl = document.createElement("p");
+                            forecastWindEl.innerHTML = "Wind : " + response.data.list[forecastIndex].wind.speed + " MPH";
+                            forecastEls[i].append(forecastWindEl);
                             const forecastHumidityEl = document.createElement("p");
                             forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
                             forecastEls[i].append(forecastHumidityEl);
