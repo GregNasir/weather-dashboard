@@ -1,6 +1,12 @@
 
 html {
-    margin: 20px;
+    /* margin: 20px; */
+}
+
+
+
+body {
+    background: linear-gradient(#4ba2d5, #29546e);
 }
 
 h1 {
@@ -16,23 +22,40 @@ h3 {
     font-size: 40px;
 }
 
+main {
+    margin: 20px;
+}
+
 /* #fiveday-header {
     font-size: 20px;
     font-weight: bold;
 } */
 
+
+
+
+
 #city-heading {
     font-size: 30px;
 }
 
+#five-day-forcast {
+    margin-left: 23px;
+}
+
+#fiveday-header {
+    color: white;
+    margin-left: 23px;
+}
+
 #header {
-    
+    width: 100%;
     padding-top: 40px;
     padding-bottom: 40px;
     margin-bottom: 20px;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(21,25,46,0.8729866946778712) 100%);
-}
+} 
 
 #look-up {
     margin-right: 20px;
@@ -86,7 +109,15 @@ h3 {
     
 }
 
-#w
+#today-weather {
+    background: transparent;
+    border: none;
+    color: white;
+}
+
+
+
+
 
 /* main {
     width: 75%;
