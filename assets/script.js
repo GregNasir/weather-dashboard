@@ -1,4 +1,4 @@
-function initPage() {
+$(document).ready(function () {
     const cityEl = document.getElementById("enter-city");
     const searchEl = document.getElementById("search-button");
     const clearEl = document.getElementById("clear-history");
@@ -143,4 +143,4 @@ function initPage() {
     
 }
 
-initPage();
+);
