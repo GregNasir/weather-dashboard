@@ -4,7 +4,7 @@ html {
 }
 
 
-
+/* sets background color for page */
 body {
     background: linear-gradient(#4ba2d5, #29546e);
 }
@@ -23,14 +23,10 @@ h3, h2 {
     color: white;
 }
 
+/* set overall margin for main section */
 main {
     margin: 20px;
 }
-
-/* #fiveday-header {
-    font-size: 20px;
-    font-weight: bold;
-} */
 
 
 #aside {
@@ -51,6 +47,7 @@ main {
     margin-left: 23px;
 }
 
+/* display settings for header */
 #header {
     width: 100%;
     padding-top: 40px;
@@ -71,22 +68,12 @@ main {
     background-color: #2589bd;
 }
 
-/* #five-day-forcast {
-    background: white;
-} */
-
-
-
-/* .float-right {
-    float: right;
-    margin-left: 25px;
-} */
-
 
 #search {
     float: left;
 }
 
+/* appearance fo search button */
 #search-button {
     color: white;
     margin-top: 10px;
@@ -124,38 +111,3 @@ main {
 
 
 
-/* main {
-    width: 75%;
-    display: inline-block;
-    margin-left: 20px;
-} */
-
-/* #main-dash {
-    background: white;
-    color: black;
-    border: thin solid black
-} */
-
-/* #col-1 {
-    margin-bottom: 20px;
-    
-    height: 200px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(14, 14, 96);
-    color: #ffffff;
-    
-    
-    
-
-} */
-
-/* .weather-dash {
-    margin-bottom: 20px;
-
-    height: 300px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /* background-color: #0072bb; */
-    /* color: black; */
-    /* width: 100%; */
-    
-/* } */ 
