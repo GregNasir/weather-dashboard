@@ -1,3 +1,4 @@
+// set variables and connect to HTML
 $(document).ready(function () {
     const cityEl = document.getElementById("enter-city");
     const searchEl = document.getElementById("search-button");
@@ -7,24 +8,24 @@ $(document).ready(function () {
     const currentTempEl = document.getElementById("temperature");
     const currentHumidityEl = document.getElementById("humidity");
     const currentWindEl = document.getElementById("wind-speed");
-    const currentUVEl = document.getElementById("UV-index");
     const historyEl = document.getElementById("history");
     var fivedayEl = document.getElementById("fiveday-header");
-    var todayweatherEl = document.getElementById("today-weather");
+    var currentweatherEl = document.getElementById("current-weather");
     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
-    // Assigning a unique API to a variable
+    // Assign API to a variable
     const APIKey = "9f7bad8b895fd8531fbdfec967ff8be6";
 
+    // function to get weather forcast for curent day
     function getWeather(cityName) {
-        // Execute a current weather get request from open weather api
+        // Execute  get request from open weather api
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
         axios.get(queryURL)
             .then(function (response) {
 
-                todayweatherEl.classList.remove("weather-1");
+                currentweatherEl.classList.remove("weather-1");
 
-                // Parse response to display current weather
+                // display current weather
                 const currentDate = new Date(response.data.dt * 1000);
                 const day = currentDate.getDate();
                 const month = currentDate.getMonth() + 1;
@@ -37,29 +38,7 @@ $(document).ready(function () {
                 currentHumidityEl.innerHTML = "Humidity: " + response.data.main.humidity + "%";
                 currentWindEl.innerHTML = "Wind Speed: " + response.data.wind.speed + " MPH";
                 
-                // Get UV Index
-                let lat = response.data.coord.lat;
-                let lon = response.data.coord.lon;
-                let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
-                axios.get(UVQueryURL)
-                    .then(function (response) {
-                        let UVIndex = document.createElement("span");
-                        
-                        // When UV Index is good, shows green, when ok shows yellow, when bad shows red
-                        if (response.data[0].value < 4 ) {
-                            UVIndex.setAttribute("class", "badge badge-success");
-                        }
-                        else if (response.data[0].value < 8) {
-                            UVIndex.setAttribute("class", "badge badge-warning");
-                        }
-                        else {
-                            UVIndex.setAttribute("class", "badge badge-danger");
-                        }
-                        console.log(response.data[0].value)
-                        UVIndex.innerHTML = response.data[0].value;
-                        currentUVEl.innerHTML = "UV Index: ";
-                        currentUVEl.append(UVIndex);
-                    });
+                
                 
                 // Get 5 day forecast for this city
                 let cityID = response.data.id;
@@ -82,35 +61,35 @@ $(document).ready(function () {
                             forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
                             forecastEls[i].append(forecastDateEl);
 
-                            // Icon for current weather
-                            const forecastWeatherEl = document.createElement("img");
-                            forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
-                            forecastWeatherEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
-                            forecastEls[i].append(forecastWeatherEl);
+                            // Icons
+                            const weatherForcastEl = document.createElement("img");
+                            weatherForcastEl.setAttribute("src", "https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
+                            weatherForcastEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
+                            forecastEls[i].append(weatherForcastEl);
                             const forecastTempEl = document.createElement("p");
                             forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
                             forecastEls[i].append(forecastTempEl);
-                            const forecastWindEl = document.createElement("p");
-                            forecastWindEl.innerHTML = "Wind : " + response.data.list[forecastIndex].wind.speed + " MPH";
-                            forecastEls[i].append(forecastWindEl);
-                            const forecastHumidityEl = document.createElement("p");
-                            forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
-                            forecastEls[i].append(forecastHumidityEl);
+                            const windForecastEl = document.createElement("p");
+                            windForecastEl.innerHTML = "Wind : " + response.data.list[forecastIndex].wind.speed + " MPH";
+                            forecastEls[i].append(windForecastEl);
+                            const humidityForecastEl = document.createElement("p");
+                            humidityForecastEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
+                            forecastEls[i].append(humidityForecastEl);
                         }
                     })
             });
     }
 
-    // Get history from local storage if any
+    // render history from local storage
     searchEl.addEventListener("click", function () {
-        const searchTerm = cityEl.value;
-        getWeather(searchTerm);
-        searchHistory.push(searchTerm);
+        const searchCity = cityEl.value;
+        getWeather(searchCity);
+        searchHistory.push(searchCity);
         localStorage.setItem("search", JSON.stringify(searchHistory));
         renderSearchHistory();
     })
 
-    // Clear History button
+    // Clears history 
     clearEl.addEventListener("click", function () {
         localStorage.clear();
         searchHistory = [];
