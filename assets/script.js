@@ -10,7 +10,7 @@ $(document).ready(function () {
     const currentWindEl = document.getElementById("wind-speed");
     const historyEl = document.getElementById("history");
     var fivedayEl = document.getElementById("fiveday-header");
-    var currentweatherEl = document.getElementById("current-weather");
+    var currentweatherEl = document.getElementById("today-weather");
     let searchHistory = JSON.parse(localStorage.getItem("search")) || [];
 
     // Assign API to a variable
