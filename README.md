@@ -26,7 +26,7 @@ An API from <a href="https://openweathermap.org/">openweathermap.org</a> was use
 The weather dashboard allows users the check the weather in any city they choose.
 
 
-  <img width="723" alt="screen shot weather dashboard link="/assets/images/screen-shot-weather-dashboard.png"/>
+  <img link="/assets/images/screen-shot-weather-dashboard.png" alt="screen shot weather dashboard/>
 
 
 # Credits
