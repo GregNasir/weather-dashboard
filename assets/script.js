@@ -17,7 +17,7 @@ $(document).ready(function () {
     const APIKey = "9f7bad8b895fd8531fbdfec967ff8be6";
 
     // function to get weather forcast for curent day
-    function getWeather(cityName) {
+    function getCityWeather(cityName) {
         // Execute  get request from open weather api
         let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
         axios.get(queryURL)
@@ -83,7 +83,7 @@ $(document).ready(function () {
     // render history from local storage
     searchEl.addEventListener("click", function () {
         const searchCity = cityEl.value;
-        getWeather(searchCity);
+        getCityWeather(searchCity);
         searchHistory.push(searchCity);
         localStorage.setItem("search", JSON.stringify(searchHistory));
         renderSearchHistory();
@@ -110,7 +110,7 @@ $(document).ready(function () {
             historyCity.setAttribute("class", "form-control d-block bg-white");
             historyCity.setAttribute("value", searchHistory[i]);
             historyCity.addEventListener("click", function () {
-                getWeather(historyCity.value);
+                getCityWeather(historyCity.value);
             })
             historyEl.append(historyCity);
         }
@@ -118,7 +118,7 @@ $(document).ready(function () {
 
     renderSearchHistory();
     if (searchHistory.length > 0) {
-        getWeather(searchHistory[searchHistory.length - 1]);
+        getCityWeather(searchHistory[searchHistory.length - 1]);
     }
     
 }
