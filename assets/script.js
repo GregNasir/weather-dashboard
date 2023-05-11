@@ -100,18 +100,19 @@ $(document).ready(function () {
         return Math.floor((K - 273.15) * 1.8 + 32);
     }
 
+    // rendering search history
     function renderSearchHistory() {
         historyEl.innerHTML = "";
         for (let i = 0; i < searchHistory.length; i++) {
-            const historyItem = document.createElement("input");
-            historyItem.setAttribute("type", "text");
-            historyItem.setAttribute("readonly", true);
-            historyItem.setAttribute("class", "form-control d-block bg-white");
-            historyItem.setAttribute("value", searchHistory[i]);
-            historyItem.addEventListener("click", function () {
-                getWeather(historyItem.value);
+            const historyCity = document.createElement("input");
+            historyCity.setAttribute("type", "text");
+            historyCity.setAttribute("readonly", true);
+            historyCity.setAttribute("class", "form-control d-block bg-white");
+            historyCity.setAttribute("value", searchHistory[i]);
+            historyCity.addEventListener("click", function () {
+                getWeather(historyCity.value);
             })
-            historyEl.append(historyItem);
+            historyEl.append(historyCity);
         }
     }
 
